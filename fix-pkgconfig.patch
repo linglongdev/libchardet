@@ -1,0 +1,15 @@
+Description: Fix pkg-config file
+ The pkg-config Cflags field is only for flags that are necessary to this
+ package, and should not pick up CFLAGS supplied by the user at build-time.
+Author: Ximin Luo <infinity0@debian.org>
+Forwarded: no
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/chardet.pc.in
++++ b/chardet.pc.in
+@@ -9,4 +9,4 @@
+ Description: Mozilla's Universal Charset Detector C/C++ API
+ Version: @PACKAGE_VERSION@
+ Libs: -L${libdir} -lchardet
+-Cflags: -I${includedir}/chardet @CFLAGS@
++Cflags: -I${includedir}/chardet

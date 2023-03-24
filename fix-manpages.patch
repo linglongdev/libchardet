@@ -1,0 +1,77 @@
+Description: Fix some errors in the manpage
+ - Leading literal dots must be represented as \[char46]
+Author: Ximin Luo <infinity0@debian.org>
+Forwarded: no
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/man/en/detect.3
++++ b/man/en/detect.3
+@@ -1,3 +1,4 @@
++
+ .TH detect 3 2011-05-02 "libchardet manuals"
+ .\" Process with
+ .\" nroff -man detect.3
+@@ -25,9 +26,9 @@
+ .TP
+ .B outbuf
+ .br
+-Stroing inforamtion of
++Storing information of
+ .B inbuf
+-. The structure of
++\[char46] The structure of
+ .B outbuf
+ is follows.
+ 
+@@ -40,7 +41,7 @@
+ 
+ The
+ .B outbuf
+-variable is must initialized by
++variable must be initialized by
+ .BI detect_obj_init
+ API before calling this detect api.
+ 
+--- a/man/en/detect_handledata.3
++++ b/man/en/detect_handledata.3
+@@ -35,7 +35,7 @@
+ .br
+ Stroing inforamtion of
+ .B inbuf
+-. The structure of
++\[char46] The structure of
+ .B outbuf
+ is follows.
+ 
+@@ -48,7 +48,7 @@
+ 
+ The
+ .B outbuf
+-variable is must initialized by
++variable must be initialized by
+ .BI detect_obj_init
+ API before calling this detect api.
+ 
+--- a/man/en/detect_obj_init.3
++++ b/man/en/detect_obj_init.3
+@@ -13,16 +13,16 @@
+ .I DetectObj chardet_obj_init (void);
+ 
+ .SH DESCRIPTION
+-initialize
++Initialize
+ .B DetectObj
+-structure that is stored chardet informations.
++structure that stores chardet information.
+ 
+ .SH "RETURN VALUE"
+ Returns
+ .B DetectObject
+-structure. The return value is must freed by
++structure. The return value must be freed by
+ .B chardet_obj_free
+-api.
++\[char46]
+ .nf
+ 
+ 	typedef struct DetectObject {

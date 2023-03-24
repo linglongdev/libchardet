@@ -1,0 +1,23 @@
+package:
+  id: libchardet
+  name: libchardet
+  version: 1.0.4
+  kind: lib
+  description: |
+    libchardet.
+
+base:
+  id: org.deepin.base
+  version: 20.5.0
+
+source:
+  kind: git
+  url: https://github.com/deepin-community/libchardet.git
+  version: master
+  commit: 245b70ffd2cc44ee530e63a912f0ee3df6f589f6
+  patch:
+  - fix-configure-ac.patch
+  - fix-pkgconfig.patch
+  - fix-manpages.patch
+build:
+  kind: autotools
